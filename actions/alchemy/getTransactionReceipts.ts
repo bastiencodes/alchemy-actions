@@ -1,11 +1,14 @@
-import { Chain, PublicClient, Transport } from "viem";
+import { Chain, Client, Transport } from "viem";
+import { AlchemyRpcSchema } from "../../types/alchemy";
 
 export type GetTransactionReceiptsParameters = {};
 
 export type GetTransactionReceiptsReturnType = string;
 
-export async function getTransactionReceipts<TChain extends Chain | undefined>(
-  client: PublicClient<Transport, TChain>,
+export async function getTransactionReceipts<
+  TClient extends Client<Transport, Chain | undefined, any, AlchemyRpcSchema>
+>(
+  client: TClient,
   args: GetTransactionReceiptsParameters
 ): Promise<GetTransactionReceiptsReturnType> {
   return "TODO";

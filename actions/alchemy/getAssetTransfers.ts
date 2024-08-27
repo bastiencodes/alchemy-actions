@@ -1,12 +1,4 @@
-import {
-  Account,
-  Chain,
-  Hex,
-  PublicClient,
-  PublicRpcSchema,
-  RpcSchema,
-  Transport,
-} from "viem";
+import { Chain, Client, Hex, Transport } from "viem";
 import { type AlchemyRpcSchema } from "../../types/alchemy";
 
 type AssetTransferCategory =
@@ -174,16 +166,9 @@ export type GetAssetTransfersReturnType = {
 };
 
 export async function getAssetTransfers<
-  TChain extends Chain | undefined,
-  TAccount extends Account | undefined
-  // TSchema extends RpcSchema | undefined
+  TClient extends Client<Transport, Chain | undefined, any, AlchemyRpcSchema>
 >(
-  client: PublicClient<
-    Transport,
-    TChain,
-    TAccount,
-    [...PublicRpcSchema, ...AlchemyRpcSchema]
-  >,
+  client: TClient,
   args: GetAssetTransfersParameters
 ): Promise<GetAssetTransfersReturnType> {
   return client.request({

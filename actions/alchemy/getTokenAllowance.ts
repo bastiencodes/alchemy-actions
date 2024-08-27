@@ -1,11 +1,4 @@
-import {
-  Account,
-  Chain,
-  Hex,
-  PublicClient,
-  PublicRpcSchema,
-  Transport,
-} from "viem";
+import { Chain, Client, Hex, Transport } from "viem";
 import { AlchemyRpcSchema } from "../../types/alchemy";
 
 export type GetTokenAllowanceParameters = {
@@ -17,15 +10,9 @@ export type GetTokenAllowanceParameters = {
 export type GetTokenAllowanceReturnType = number;
 
 export async function getTokenAllowance<
-  TChain extends Chain | undefined,
-  TAccount extends Account | undefined
+  TClient extends Client<Transport, Chain | undefined, any, AlchemyRpcSchema>
 >(
-  client: PublicClient<
-    Transport,
-    TChain,
-    TAccount,
-    [...PublicRpcSchema, ...AlchemyRpcSchema]
-  >,
+  client: TClient,
   args: GetTokenAllowanceParameters
 ): Promise<GetTokenAllowanceReturnType> {
   return client.request({
