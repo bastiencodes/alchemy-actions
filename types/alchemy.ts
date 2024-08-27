@@ -43,6 +43,16 @@ import {
   type SimulateExecutionBundleReturnType,
 } from "../actions/alchemy/simulateExecutionBundle";
 
+import {
+  type GetGasOptimizedTransactionStatusParameters,
+  type GetGasOptimizedTransactionStatusReturnType,
+} from "../actions/alchemy/getGasOptimizedTransactionStatus";
+
+import {
+  type SendGasOptimizedTransactionParameters,
+  type SendGasOptimizedTransactionReturnType,
+} from "../actions/alchemy/sendGasOptimizedTransaction";
+
 export type AlchemyRpcSchema = [
   {
     Method: "alchemy_getAssetTransfers";
@@ -88,5 +98,15 @@ export type AlchemyRpcSchema = [
     Method: "alchemy_simulateExecutionBundle";
     Parameters: SimulateExecutionBundleParameters;
     ReturnType: SimulateExecutionBundleReturnType;
+  },
+  {
+    Method: "alchemy_getGasOptimizedTransactionStatus";
+    Parameters: GetGasOptimizedTransactionStatusParameters;
+    ReturnType: GetGasOptimizedTransactionStatusReturnType;
+  },
+  {
+    Method: "alchemy_sendGasOptimizedTransaction";
+    Parameters: SendGasOptimizedTransactionParameters;
+    ReturnType: SendGasOptimizedTransactionReturnType;
   }
 ];

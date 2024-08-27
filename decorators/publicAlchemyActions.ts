@@ -56,6 +56,18 @@ import {
   type SimulateExecutionBundleReturnType,
 } from "../actions/alchemy/simulateExecutionBundle.js";
 
+import {
+  getGasOptimizedTransactionStatus,
+  type GetGasOptimizedTransactionStatusParameters,
+  type GetGasOptimizedTransactionStatusReturnType,
+} from "../actions/alchemy/getGasOptimizedTransactionStatus.js";
+
+import {
+  sendGasOptimizedTransaction,
+  type SendGasOptimizedTransactionParameters,
+  type SendGasOptimizedTransactionReturnType,
+} from "../actions/alchemy/sendGasOptimizedTransaction.js";
+
 export type PublicAlchemyActions<
   TTransport extends Transport = Transport,
   TChain extends Chain | undefined = Chain | undefined
@@ -95,6 +107,14 @@ export type PublicAlchemyActions<
   simulateExecutionBundle: (
     args: SimulateExecutionBundleParameters
   ) => Promise<SimulateExecutionBundleReturnType>;
+
+  getGasOptimizedTransactionStatus: (
+    args: GetGasOptimizedTransactionStatusParameters
+  ) => Promise<GetGasOptimizedTransactionStatusReturnType>;
+
+  sendGasOptimizedTransaction: (
+    args: SendGasOptimizedTransactionParameters
+  ) => Promise<SendGasOptimizedTransactionReturnType>;
 };
 
 export const publicAlchemyActions = <TTransport extends Transport = Transport>(
@@ -110,4 +130,8 @@ export const publicAlchemyActions = <TTransport extends Transport = Transport>(
     simulateAssetChangesBundle(client, args),
   simulateExecution: (args) => simulateExecution(client, args),
   simulateExecutionBundle: (args) => simulateExecutionBundle(client, args),
+  getGasOptimizedTransactionStatus: (args) =>
+    getGasOptimizedTransactionStatus(client, args),
+  sendGasOptimizedTransaction: (args) =>
+    sendGasOptimizedTransaction(client, args),
 });
