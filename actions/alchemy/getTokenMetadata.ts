@@ -11,5 +11,8 @@ export async function getTokenMetadata<
   client: TClient,
   args: GetTokenMetadataParameters
 ): Promise<GetTokenMetadataReturnType> {
-  return "TODO";
+  return client.request({
+    method: "alchemy_getTokenMetadata",
+    params: args,
+  });
 }

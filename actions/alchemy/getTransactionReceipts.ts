@@ -11,5 +11,8 @@ export async function getTransactionReceipts<
   client: TClient,
   args: GetTransactionReceiptsParameters
 ): Promise<GetTransactionReceiptsReturnType> {
-  return "TODO";
+  return client.request({
+    method: "alchemy_getTransactionReceipts",
+    params: args,
+  });
 }

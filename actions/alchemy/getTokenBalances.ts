@@ -11,5 +11,8 @@ export async function getTokenBalances<
   client: TClient,
   args: GetTokenBalancesParameters
 ): Promise<GetTokenBalancesReturnType> {
-  return "TODO";
+  return client.request({
+    method: "alchemy_getTokenBalances",
+    params: args,
+  });
 }
