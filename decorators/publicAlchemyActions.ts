@@ -1,4 +1,4 @@
-import { Account, Chain, PublicClient, RpcSchema, Transport } from "viem";
+import { Account, Chain, PublicClient, Transport } from "viem";
 
 import {
   getAssetTransfers,
@@ -43,17 +43,17 @@ export type PublicAlchemyActions<
     args: GetTokenAllowanceParameters
   ) => Promise<GetTokenAllowanceReturnType>;
 
-  // getTokenBalances: (
-  //   args: GetTokenBalancesParameters
-  // ) => Promise<GetTokenBalancesReturnType>;
+  getTokenBalances: (
+    args: GetTokenBalancesParameters
+  ) => Promise<GetTokenBalancesReturnType>;
 
-  // getTokenMetadata: (
-  //   args: GetTokenMetadataParameters
-  // ) => Promise<GetTokenMetadataReturnType>;
+  getTokenMetadata: (
+    args: GetTokenMetadataParameters
+  ) => Promise<GetTokenMetadataReturnType>;
 
-  // getTransactionReceipts: (
-  //   args: GetTransactionReceiptsParameters
-  // ) => Promise<GetTransactionReceiptsReturnType>;
+  getTransactionReceipts: (
+    args: GetTransactionReceiptsParameters
+  ) => Promise<GetTransactionReceiptsReturnType>;
 };
 
 export const publicAlchemyActions = <TTransport extends Transport = Transport>(
@@ -61,7 +61,7 @@ export const publicAlchemyActions = <TTransport extends Transport = Transport>(
 ): PublicAlchemyActions => ({
   getAssetTransfers: (args) => getAssetTransfers(client, args),
   getTokenAllowance: (args) => getTokenAllowance(client, args),
-  // getTokenBalances: (args) => getTokenBalances(client, args),
-  // getTokenMetadata: (args) => getTokenMetadata(client, args),
-  // getTransactionReceipts: (args) => getTransactionReceipts(client, args),
+  getTokenBalances: (args) => getTokenBalances(client, args),
+  getTokenMetadata: (args) => getTokenMetadata(client, args),
+  getTransactionReceipts: (args) => getTransactionReceipts(client, args),
 });
