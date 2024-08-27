@@ -23,6 +23,26 @@ import {
   type GetTransactionReceiptsReturnType,
 } from "../actions/alchemy/getTransactionReceipts";
 
+import {
+  type SimulateAssetChangesParameters,
+  type SimulateAssetChangesReturnType,
+} from "../actions/alchemy/simulateAssetChanges";
+
+import {
+  type SimulateAssetChangesBundleParameters,
+  type SimulateAssetChangesBundleReturnType,
+} from "../actions/alchemy/simulateAssetChangesBundle";
+
+import {
+  type SimulateExecutionParameters,
+  type SimulateExecutionReturnType,
+} from "../actions/alchemy/simulateExecution";
+
+import {
+  type SimulateExecutionBundleParameters,
+  type SimulateExecutionBundleReturnType,
+} from "../actions/alchemy/simulateExecutionBundle";
+
 export type AlchemyRpcSchema = [
   {
     Method: "alchemy_getAssetTransfers";
@@ -48,5 +68,25 @@ export type AlchemyRpcSchema = [
     Method: "alchemy_getTransactionReceipts";
     Parameters: GetTransactionReceiptsParameters;
     ReturnType: GetTransactionReceiptsReturnType;
+  },
+  {
+    Method: "alchemy_simulateAssetChanges";
+    Parameters: SimulateAssetChangesParameters;
+    ReturnType: SimulateAssetChangesReturnType;
+  },
+  {
+    Method: "alchemy_simulateAssetChangesBundle";
+    Parameters: SimulateAssetChangesBundleParameters;
+    ReturnType: SimulateAssetChangesBundleReturnType;
+  },
+  {
+    Method: "alchemy_simulateExecution";
+    Parameters: SimulateExecutionParameters;
+    ReturnType: SimulateExecutionReturnType;
+  },
+  {
+    Method: "alchemy_simulateExecutionBundle";
+    Parameters: SimulateExecutionBundleParameters;
+    ReturnType: SimulateExecutionBundleReturnType;
   }
 ];

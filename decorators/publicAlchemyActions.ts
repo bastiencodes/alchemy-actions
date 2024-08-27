@@ -1,5 +1,7 @@
 import { Account, Chain, PublicClient, Transport } from "viem";
 
+import { AlchemyRpcSchema } from "../types/alchemy.js";
+
 import {
   getAssetTransfers,
   type GetAssetTransfersParameters,
@@ -29,7 +31,30 @@ import {
   type GetTransactionReceiptsParameters,
   type GetTransactionReceiptsReturnType,
 } from "../actions/alchemy/getTransactionReceipts.js";
-import { AlchemyRpcSchema } from "../types/alchemy.js";
+
+import {
+  simulateAssetChanges,
+  type SimulateAssetChangesParameters,
+  type SimulateAssetChangesReturnType,
+} from "../actions/alchemy/simulateAssetChanges.js";
+
+import {
+  simulateAssetChangesBundle,
+  type SimulateAssetChangesBundleParameters,
+  type SimulateAssetChangesBundleReturnType,
+} from "../actions/alchemy/simulateAssetChangesBundle.js";
+
+import {
+  simulateExecution,
+  type SimulateExecutionParameters,
+  type SimulateExecutionReturnType,
+} from "../actions/alchemy/simulateExecution.js";
+
+import {
+  simulateExecutionBundle,
+  type SimulateExecutionBundleParameters,
+  type SimulateExecutionBundleReturnType,
+} from "../actions/alchemy/simulateExecutionBundle.js";
 
 export type PublicAlchemyActions<
   TTransport extends Transport = Transport,
@@ -54,6 +79,22 @@ export type PublicAlchemyActions<
   getTransactionReceipts: (
     args: GetTransactionReceiptsParameters
   ) => Promise<GetTransactionReceiptsReturnType>;
+
+  simulateAssetChanges: (
+    args: SimulateAssetChangesParameters
+  ) => Promise<SimulateAssetChangesReturnType>;
+
+  simulateAssetChangesBundle: (
+    args: SimulateAssetChangesBundleParameters
+  ) => Promise<SimulateAssetChangesBundleReturnType>;
+
+  simulateExecution: (
+    args: SimulateExecutionParameters
+  ) => Promise<SimulateExecutionReturnType>;
+
+  simulateExecutionBundle: (
+    args: SimulateExecutionBundleParameters
+  ) => Promise<SimulateExecutionBundleReturnType>;
 };
 
 export const publicAlchemyActions = <TTransport extends Transport = Transport>(
@@ -64,4 +105,9 @@ export const publicAlchemyActions = <TTransport extends Transport = Transport>(
   getTokenBalances: (args) => getTokenBalances(client, args),
   getTokenMetadata: (args) => getTokenMetadata(client, args),
   getTransactionReceipts: (args) => getTransactionReceipts(client, args),
+  simulateAssetChanges: (args) => simulateAssetChanges(client, args),
+  simulateAssetChangesBundle: (args) =>
+    simulateAssetChangesBundle(client, args),
+  simulateExecution: (args) => simulateExecution(client, args),
+  simulateExecutionBundle: (args) => simulateExecutionBundle(client, args),
 });
