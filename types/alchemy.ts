@@ -1,57 +1,57 @@
 import {
   type GetAssetTransfersReturnType,
   type GetAssetTransfersParameters,
-} from "../actions/alchemy/getAssetTransfers";
+} from "../actions/alchemy/transfers/getAssetTransfers";
 
 import {
   type GetTokenAllowanceParameters,
   type GetTokenAllowanceReturnType,
-} from "../actions/alchemy/getTokenAllowance";
+} from "../actions/alchemy/token/getTokenAllowance";
 
 import {
   type GetTokenBalancesParameters,
   type GetTokenBalancesReturnType,
-} from "../actions/alchemy/getTokenBalances";
+} from "../actions/alchemy/token/getTokenBalances";
 
 import {
   type GetTokenMetadataParameters,
   type GetTokenMetadataReturnType,
-} from "../actions/alchemy/getTokenMetadata";
+} from "../actions/alchemy/token/getTokenMetadata";
 
 import {
   type GetTransactionReceiptsParameters,
   type GetTransactionReceiptsReturnType,
-} from "../actions/alchemy/getTransactionReceipts";
+} from "../actions/alchemy/tx-receipts/getTransactionReceipts";
 
 import {
   type SimulateAssetChangesParameters,
   type SimulateAssetChangesReturnType,
-} from "../actions/alchemy/simulateAssetChanges";
+} from "../actions/alchemy/simulation/simulateAssetChanges";
 
 import {
   type SimulateAssetChangesBundleParameters,
   type SimulateAssetChangesBundleReturnType,
-} from "../actions/alchemy/simulateAssetChangesBundle";
+} from "../actions/alchemy/simulation/simulateAssetChangesBundle";
 
 import {
   type SimulateExecutionParameters,
   type SimulateExecutionReturnType,
-} from "../actions/alchemy/simulateExecution";
+} from "../actions/alchemy/simulation/simulateExecution";
 
 import {
   type SimulateExecutionBundleParameters,
   type SimulateExecutionBundleReturnType,
-} from "../actions/alchemy/simulateExecutionBundle";
+} from "../actions/alchemy/simulation/simulateExecutionBundle";
 
 import {
   type GetGasOptimizedTransactionStatusParameters,
   type GetGasOptimizedTransactionStatusReturnType,
-} from "../actions/alchemy/getGasOptimizedTransactionStatus";
+} from "../actions/alchemy/gas-optimized-tx/getGasOptimizedTransactionStatus";
 
 import {
   type SendGasOptimizedTransactionParameters,
   type SendGasOptimizedTransactionReturnType,
-} from "../actions/alchemy/sendGasOptimizedTransaction";
+} from "../actions/alchemy/gas-optimized-tx/sendGasOptimizedTransaction";
 
 export type AlchemyRpcSchema = [
   {

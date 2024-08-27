@@ -1,5 +1,5 @@
 import { Chain, Client, Transport } from "viem";
-import { AlchemyRpcSchema } from "../../types/alchemy";
+import { AlchemyRpcSchema } from "../../../types/alchemy";
 
 export type GetGasOptimizedTransactionStatusParameters = {};
 

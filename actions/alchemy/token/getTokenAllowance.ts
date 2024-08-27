@@ -1,5 +1,5 @@
 import { Chain, Client, Hex, Transport } from "viem";
-import { AlchemyRpcSchema } from "../../types/alchemy";
+import { AlchemyRpcSchema } from "../../../types/alchemy";
 
 export type GetTokenAllowanceParameters = {
   contract: Hex;

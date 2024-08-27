@@ -1,5 +1,5 @@
 import { Chain, Client, Hex, Transport } from "viem";
-import { type AlchemyRpcSchema } from "../../types/alchemy";
+import { AlchemyRpcSchema } from "../../../types/alchemy";
 
 type AssetTransferCategory =
   | "external"

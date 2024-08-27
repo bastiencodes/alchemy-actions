@@ -4,67 +4,67 @@ import {
   getAssetTransfers,
   type GetAssetTransfersParameters,
   type GetAssetTransfersReturnType,
-} from "../actions/alchemy/getAssetTransfers.js";
+} from "../actions/alchemy/transfers/getAssetTransfers.js";
 
 import {
   getTokenAllowance,
   type GetTokenAllowanceParameters,
   type GetTokenAllowanceReturnType,
-} from "../actions/alchemy/getTokenAllowance.js";
+} from "../actions/alchemy/token/getTokenAllowance.js";
 
 import {
   getTokenBalances,
   type GetTokenBalancesParameters,
   type GetTokenBalancesReturnType,
-} from "../actions/alchemy/getTokenBalances.js";
+} from "../actions/alchemy/token/getTokenBalances.js";
 
 import {
   getTokenMetadata,
   type GetTokenMetadataParameters,
   type GetTokenMetadataReturnType,
-} from "../actions/alchemy/getTokenMetadata.js";
+} from "../actions/alchemy/token/getTokenMetadata.js";
 
 import {
   getTransactionReceipts,
   type GetTransactionReceiptsParameters,
   type GetTransactionReceiptsReturnType,
-} from "../actions/alchemy/getTransactionReceipts.js";
+} from "../actions/alchemy/tx-receipts/getTransactionReceipts.js";
 
 import {
   simulateAssetChanges,
   type SimulateAssetChangesParameters,
   type SimulateAssetChangesReturnType,
-} from "../actions/alchemy/simulateAssetChanges.js";
+} from "../actions/alchemy/simulation/simulateAssetChanges.js";
 
 import {
   simulateAssetChangesBundle,
   type SimulateAssetChangesBundleParameters,
   type SimulateAssetChangesBundleReturnType,
-} from "../actions/alchemy/simulateAssetChangesBundle.js";
+} from "../actions/alchemy/simulation/simulateAssetChangesBundle.js";
 
 import {
   simulateExecution,
   type SimulateExecutionParameters,
   type SimulateExecutionReturnType,
-} from "../actions/alchemy/simulateExecution.js";
+} from "../actions/alchemy/simulation/simulateExecution.js";
 
 import {
   simulateExecutionBundle,
   type SimulateExecutionBundleParameters,
   type SimulateExecutionBundleReturnType,
-} from "../actions/alchemy/simulateExecutionBundle.js";
+} from "../actions/alchemy/simulation/simulateExecutionBundle.js";
 
 import {
   getGasOptimizedTransactionStatus,
   type GetGasOptimizedTransactionStatusParameters,
   type GetGasOptimizedTransactionStatusReturnType,
-} from "../actions/alchemy/getGasOptimizedTransactionStatus.js";
+} from "../actions/alchemy/gas-optimized-tx/getGasOptimizedTransactionStatus.js";
 
 import {
   sendGasOptimizedTransaction,
   type SendGasOptimizedTransactionParameters,
   type SendGasOptimizedTransactionReturnType,
-} from "../actions/alchemy/sendGasOptimizedTransaction.js";
+} from "../actions/alchemy/gas-optimized-tx/sendGasOptimizedTransaction.js";
 
 export type PublicAlchemyActions = {
   getAssetTransfers: (
