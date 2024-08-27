@@ -1,8 +1,13 @@
 import {
-  TraceBlockByHashParameters,
-  TraceBlockByNumberParameters,
-  TraceBlockByRlpParameters,
+  type TraceBlockByHashParameters,
+  type TraceBlockByNumberParameters,
+  type TraceBlockByRlpParameters,
 } from "../actions/debug/traceBlock";
+
+import {
+  type TraceCallParameters,
+  type TraceCallReturnType,
+} from "../actions/debug/traceCall";
 
 export type DebugRpcSchema = [
   {
@@ -19,5 +24,10 @@ export type DebugRpcSchema = [
     Method: "debug_traceBlockByHash";
     Parameters: TraceBlockByHashParameters;
     ReturnType: string;
+  },
+  {
+    Method: "debug_traceCall";
+    Parameters: TraceCallParameters;
+    ReturnType: TraceCallReturnType;
   }
 ];
