@@ -1,6 +1,4 @@
-import { Account, Chain, PublicClient, Transport } from "viem";
-
-import { AlchemyRpcSchema } from "../types/alchemy.js";
+import { Client } from "viem";
 
 import {
   getAssetTransfers,
@@ -68,10 +66,7 @@ import {
   type SendGasOptimizedTransactionReturnType,
 } from "../actions/alchemy/sendGasOptimizedTransaction.js";
 
-export type PublicAlchemyActions<
-  TTransport extends Transport = Transport,
-  TChain extends Chain | undefined = Chain | undefined
-> = {
+export type PublicAlchemyActions = {
   getAssetTransfers: (
     args: GetAssetTransfersParameters
   ) => Promise<GetAssetTransfersReturnType>;
@@ -117,9 +112,7 @@ export type PublicAlchemyActions<
   ) => Promise<SendGasOptimizedTransactionReturnType>;
 };
 
-export const publicAlchemyActions = <TTransport extends Transport = Transport>(
-  client: PublicClient<TTransport, Chain, Account | undefined, AlchemyRpcSchema>
-): PublicAlchemyActions => ({
+export const publicAlchemyActions = (client: Client): PublicAlchemyActions => ({
   getAssetTransfers: (args) => getAssetTransfers(client, args),
   getTokenAllowance: (args) => getTokenAllowance(client, args),
   getTokenBalances: (args) => getTokenBalances(client, args),
