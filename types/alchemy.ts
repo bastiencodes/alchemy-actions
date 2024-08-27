@@ -1,7 +1,26 @@
+import { GetTransactionReceiptParameters } from "viem";
+
 import {
   type GetAssetTransfersReturnType,
   type GetAssetTransfersParameters,
 } from "../actions/alchemy/getAssetTransfers";
+
+import {
+  type GetTokenAllowanceParameters,
+  type GetTokenAllowanceReturnType,
+} from "../actions/alchemy/getTokenAllowance";
+
+import {
+  type GetTokenBalancesParameters,
+  type GetTokenBalancesReturnType,
+} from "../actions/alchemy/getTokenBalances";
+
+import {
+  type GetTokenMetadataParameters,
+  type GetTokenMetadataReturnType,
+} from "../actions/alchemy/getTokenMetadata";
+
+import { type GetTransactionReceiptsReturnType } from "../actions/alchemy/getTransactionReceipts";
 
 export type AlchemyRpcSchema = [
   {
@@ -11,22 +30,22 @@ export type AlchemyRpcSchema = [
   },
   {
     Method: "alchemy_getTokenAllowance";
-    Parameters: [];
-    ReturnType: string;
+    Parameters: GetTokenAllowanceParameters;
+    ReturnType: GetTokenAllowanceReturnType;
   },
   {
     Method: "alchemy_getTokenBalances";
-    Parameters: [];
-    ReturnType: string;
+    Parameters: GetTokenBalancesParameters;
+    ReturnType: GetTokenBalancesReturnType;
   },
   {
     Method: "alchemy_getTokenMetadata";
-    Parameters: [];
-    ReturnType: string;
+    Parameters: GetTokenMetadataParameters;
+    ReturnType: GetTokenMetadataReturnType;
   },
   {
     Method: "alchemy_getTransactionReceipts";
-    Parameters: [];
-    ReturnType: string;
+    Parameters: GetTransactionReceiptParameters;
+    ReturnType: GetTransactionReceiptsReturnType;
   }
 ];
