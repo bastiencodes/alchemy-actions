@@ -39,9 +39,9 @@ export type PublicAlchemyActions<
     args: GetAssetTransfersParameters
   ) => Promise<GetAssetTransfersReturnType>;
 
-  // getTokenAllowance: (
-  //   args: GetTokenAllowanceParameters
-  // ) => Promise<GetTokenAllowanceReturnType>;
+  getTokenAllowance: (
+    args: GetTokenAllowanceParameters
+  ) => Promise<GetTokenAllowanceReturnType>;
 
   // getTokenBalances: (
   //   args: GetTokenBalancesParameters
@@ -60,7 +60,7 @@ export const publicAlchemyActions = <TTransport extends Transport = Transport>(
   client: PublicClient<TTransport, Chain, Account | undefined, AlchemyRpcSchema>
 ): PublicAlchemyActions => ({
   getAssetTransfers: (args) => getAssetTransfers(client, args),
-  // getTokenAllowance: (args) => getTokenAllowance(client, args),
+  getTokenAllowance: (args) => getTokenAllowance(client, args),
   // getTokenBalances: (args) => getTokenBalances(client, args),
   // getTokenMetadata: (args) => getTokenMetadata(client, args),
   // getTransactionReceipts: (args) => getTransactionReceipts(client, args),
