@@ -1,5 +1,3 @@
-import { GetTransactionReceiptParameters } from "viem";
-
 import {
   type GetAssetTransfersReturnType,
   type GetAssetTransfersParameters,
@@ -20,7 +18,10 @@ import {
   type GetTokenMetadataReturnType,
 } from "../actions/alchemy/getTokenMetadata";
 
-import { type GetTransactionReceiptsReturnType } from "../actions/alchemy/getTransactionReceipts";
+import {
+  type GetTransactionReceiptsParameters,
+  type GetTransactionReceiptsReturnType,
+} from "../actions/alchemy/getTransactionReceipts";
 
 export type AlchemyRpcSchema = [
   {
@@ -45,7 +46,7 @@ export type AlchemyRpcSchema = [
   },
   {
     Method: "alchemy_getTransactionReceipts";
-    Parameters: GetTransactionReceiptParameters;
+    Parameters: GetTransactionReceiptsParameters;
     ReturnType: GetTransactionReceiptsReturnType;
   }
 ];
