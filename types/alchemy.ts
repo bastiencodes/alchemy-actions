@@ -53,6 +53,16 @@ import {
   type SendGasOptimizedTransactionReturnType,
 } from "../actions/alchemy/gas-optimized-tx/sendGasOptimizedTransaction";
 
+import {
+  type CancelPrivateTransactionParameters,
+  type CancelPrivateTransactionReturnType,
+} from "../actions/alchemy/private-tx/cancelPrivateTransaction";
+
+import {
+  type SendPrivateTransactionParameters,
+  type SendPrivateTransactionReturnType,
+} from "../actions/alchemy/private-tx/sendPrivateTransaction";
+
 export type AlchemyRpcSchema = [
   {
     Method: "alchemy_getAssetTransfers";
@@ -108,5 +118,15 @@ export type AlchemyRpcSchema = [
     Method: "alchemy_sendGasOptimizedTransaction";
     Parameters: SendGasOptimizedTransactionParameters;
     ReturnType: SendGasOptimizedTransactionReturnType;
+  },
+  {
+    Method: "eth_cancelPrivateTransaction";
+    Parameters: CancelPrivateTransactionParameters;
+    ReturnType: CancelPrivateTransactionReturnType;
+  },
+  {
+    Method: "eth_sendPrivateTransaction";
+    Parameters: SendPrivateTransactionParameters;
+    ReturnType: SendPrivateTransactionReturnType;
   }
 ];

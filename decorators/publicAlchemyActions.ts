@@ -66,6 +66,18 @@ import {
   type SendGasOptimizedTransactionReturnType,
 } from "../actions/alchemy/gas-optimized-tx/sendGasOptimizedTransaction.js";
 
+import {
+  cancelPrivateTransaction,
+  CancelPrivateTransactionParameters,
+  CancelPrivateTransactionReturnType,
+} from "../actions/alchemy/private-tx/cancelPrivateTransaction.js";
+
+import {
+  sendPrivateTransaction,
+  SendPrivateTransactionParameters,
+  SendPrivateTransactionReturnType,
+} from "../actions/alchemy/private-tx/sendPrivateTransaction.js";
+
 export type PublicAlchemyActions = {
   getAssetTransfers: (
     args: GetAssetTransfersParameters
@@ -110,6 +122,14 @@ export type PublicAlchemyActions = {
   sendGasOptimizedTransaction: (
     args: SendGasOptimizedTransactionParameters
   ) => Promise<SendGasOptimizedTransactionReturnType>;
+
+  cancelPrivateTransaction: (
+    args: CancelPrivateTransactionParameters
+  ) => Promise<CancelPrivateTransactionReturnType>;
+
+  sendPrivateTransaction: (
+    args: SendPrivateTransactionParameters
+  ) => Promise<SendPrivateTransactionReturnType>;
 };
 
 export const publicAlchemyActions = (client: Client): PublicAlchemyActions => ({
@@ -127,4 +147,6 @@ export const publicAlchemyActions = (client: Client): PublicAlchemyActions => ({
     getGasOptimizedTransactionStatus(client, args),
   sendGasOptimizedTransaction: (args) =>
     sendGasOptimizedTransaction(client, args),
+  cancelPrivateTransaction: (args) => cancelPrivateTransaction(client, args),
+  sendPrivateTransaction: (args) => sendPrivateTransaction(client, args),
 });
