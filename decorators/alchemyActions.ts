@@ -78,7 +78,7 @@ import {
   SendPrivateTransactionReturnType,
 } from "../actions/alchemy/private-tx/sendPrivateTransaction.js";
 
-export type PublicAlchemyActions = {
+export type AlchemyActions = {
   getAssetTransfers: (
     args: GetAssetTransfersParameters
   ) => Promise<GetAssetTransfersReturnType>;
@@ -132,7 +132,7 @@ export type PublicAlchemyActions = {
   ) => Promise<SendPrivateTransactionReturnType>;
 };
 
-export const publicAlchemyActions = (client: Client): PublicAlchemyActions => ({
+export const alchemyActions = (client: Client): AlchemyActions => ({
   getAssetTransfers: (args) => getAssetTransfers(client, args),
   getTokenAllowance: (args) => getTokenAllowance(client, args),
   getTokenBalances: (args) => getTokenBalances(client, args),
